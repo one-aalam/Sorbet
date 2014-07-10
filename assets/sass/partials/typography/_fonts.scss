@@ -1,0 +1,18 @@
+$font-faces-name: (Alegreya-Regular, League-Gothic, JennaSueRegular);
+$font-faces-file: (Alegreya-Regular-webfont, League_Gothic-webfont, JennaSue-webfont);
+
+@each $font in $font-faces-name{
+	$i: index($font-faces-name, $font);
+	$file: nth($font-faces-file,$i);
+
+	@font-face {
+	    font-family: $font;
+	    src: font-url('#{$file}.eot');
+	    src: font-url('#{$file}.eot?iefix') format('eot'),
+	         font-url('#{$file}.woff') format('woff'),
+	         font-url('#{$file}.ttf') format('truetype'),
+	         font-url('#{$file}.svg#webfontZam02nTh') format('svg');
+	    font-weight: normal;
+	    font-style: normal; }
+
+}
