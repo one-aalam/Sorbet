@@ -6,20 +6,21 @@ var gulp  = require('gulp'),
 	uglify = require('gulp-uglify'),
 	concat = require('gulp-concat'),
 	size = require('gulp-size'),
+	args = require('yargs').argv, 
+	gulpif = require('gulpif'), 
 	
 	config = require('../config');
 
-var isProduction = true;
+var isProduction = args.type === 'production' ;
 	
 // Task: Scripts
 gulp.task('scripts', function(){
 		return gulp.src(config.src.coffee) //, config.src.scripts
 		   		   .pipe(coffee())
 				   .pipe(concat('app.js'))
-				   .pipe(gulp.dest(config.paths.scripts.dest))
-				   .pipe(isProduction ? uglify() : gutil.noop())
+				   .pipe(gulpif(isProduction, uglify()))
 				   .pipe(size())
-				   .pipe(rename('app.min.js'))
+				   .pipe(gulpif(isProduction, rename({suffix: '.min'})))
 				   .pipe(gulp.dest(config.paths.scripts.dest))
 				   .on('error', gutil.log);
 		/*
