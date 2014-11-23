@@ -1,4 +1,4 @@
 do ($ = jQuery, window)	->
-	$ ->
-		alert "hihelloxxxx"
+  $ ->
+  alert "hihelloxxxx"
 		

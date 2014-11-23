@@ -4,10 +4,10 @@
  */
 
 var basePaths = {
-	src: './src',
-	dest: './build',
-	temp:'./.temp',
-	vendor: '/bower_components'
+	src: 'src',
+	dest: 'build',
+	temp:'.temp',
+	vendor: 'bower_components'
 };
 
 /**

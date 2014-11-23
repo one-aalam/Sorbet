@@ -1,0 +1,2 @@
+do($, window) ->
+	window.location
