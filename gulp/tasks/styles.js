@@ -9,9 +9,17 @@ var gulp  = require('gulp'),
 	combineMQ = require('gulp-combine-media-queries'),
 	size = require('gulp-size'),
 	autoprefix = require('gulp-autoprefixer'),
+	args = require('yargs').argv, 
+	gulpif = require('gulp-if'), 
+	notify = require('gulp-notify'),
+	plumber = require('gulp-plumber'), 
+	
 	config = require('../config');
 // Config
-var isProduction = false;
+var isProduction = args.type === 'production' ;
+var isLess = args.flavor === 'less' ;
+var isStyl = args.flavor === 'styl' ;
+var isSass = !isLess && !isStyl;
 
 
 	gulp.task('styles:sass', function(){ 
