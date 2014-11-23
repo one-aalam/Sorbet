@@ -6,7 +6,7 @@
 var basePaths = {
 	src: './src',
 	dest: './build',
-	temp:'./temp',
+	temp:'./.temp',
 	vendor: '/bower_components'
 };
 
