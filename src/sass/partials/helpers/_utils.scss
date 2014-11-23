@@ -1,0 +1,63 @@
+$links-ext: (twitter, facebook, in, vcard, skype);
+$text-align: (left, right, center);
+
+.social{
+	padding-left:32px;
+	height:32px;
+	@each $link in $links-ext{
+		#soc-#{$link}{
+			background: url(icons/#{$link}_dark.png) no-repeat;
+			&:hover, &:focus{
+				background: url(icons/#{$link}_active.png) no-repeat;
+			}
+		}
+	}
+}
+
+@each $alignment in $text-align{
+	.text-#{$alignment}{
+		text-align:#{$alignment};
+	}
+}
+
+.text-capitalize, .capitalize{
+	text-transform: uppercase;
+}
+.text-none{
+	line-height: 0; 
+    font-size: 0;
+    color: transparent;
+    text-decoration:none;
+	display:inline-block;
+}
+.text-small,.mini,.ft{
+	font-size:.5em;
+}
+.link-btn{
+	text-decoration:none;
+	display:inline-block;
+}
+
+.no-intimation{
+-webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: moz-none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.cover{
+	position: fixed; 
+	top: -50%; left: -50%; 
+	width: 200%; height: 200%;
+	z-index:-1;
+	background-color:#7279D8;
+	overflow:hidden;
+}
+.cover img{
+  position: absolute; 
+  top: 0; left: 0; right: 0; bottom: 0; 
+  margin: auto; 
+  min-width: 50%; min-height: 50%;
+}
