@@ -1,3 +1,6 @@
-var gulp = require('gulp');
+var gulp = require('gulp'),
+	notify = require('gulp-notify');
 
-	gulp.task('build',['style:sass','images', 'markup']);
+	gulp.task('build',['flush', 'styles','scripts','images', 'html', 'copy'], function(){
+		notify({message:"Built successfully!"});
+	});

@@ -51,12 +51,10 @@ gulp.task('scripts-coffee', false, function(){
 // Task: Scripts
 gulp.task('scripts-js', false,  function(){
 		return gulp.src(config.src.scripts) //, config.src.scripts
-		   		   //.pipe(jshint())
+		   		   .pipe(jshint())
+		   		   .pipe(jshint.reporter())
 				   .pipe(concat('app.js'))
-				   //.pipe(gulpif(isProduction, uglify()))
 				   .pipe(size())
-				   //.pipe(gulpif(isProduction, rename({suffix: '.min'})))
-				   //.pipe(gulp.dest(config.paths.scripts.dest))
 				   .pipe(gulp.dest(config.base.temp))
 				   .on('error', swallowError);
 		/*

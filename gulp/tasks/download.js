@@ -13,6 +13,8 @@ var gulp = require('gulp'),
 
 
 	// Typical process of downloading something
+	// @TODO: Use a `git submodule` based approach
+	// to download stuff required by starter
 	gulp.task('init',['flush:temp'], function(){
 		// Check repo pattern before downloading
 		ghdown({
