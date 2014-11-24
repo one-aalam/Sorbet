@@ -1,1 +1,2 @@
 do($) ->
+  alert "hello"
