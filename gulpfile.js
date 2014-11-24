@@ -1,5 +1,5 @@
 // load gulp
-var gulp = require('gulp'),
+var gulp = require('gulp-help')(require('gulp')),
 	gutl = require('gulp-util'),
 	ghdown = require('github-download'),
 	rimraf = require('rimraf'),

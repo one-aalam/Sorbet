@@ -1,19 +1,19 @@
 var gulp  = require('gulp'),
 	gutil = require('gulp-util'),
-	
+
 	rename = require('gulp-rename'),
 	coffee = require('gulp-coffee'),
 	coffeelint = require('gulp-coffeelint'),
-	jshint = require('jshint'), 
+	jshint = require('jshint'),
 	lintThreshold = require('gulp-coffeelint-threshold'),
 	uglify = require('gulp-uglify'),
 	concat = require('gulp-concat'),
 	size = require('gulp-size'),
-	args = require('yargs').argv, 
-	gulpif = require('gulp-if'), 
+	args = require('yargs').argv,
+	gulpif = require('gulp-if'),
 	notify = require('gulp-notify'),
-	plumber = require('gulp-plumber'), 
-	
+	plumber = require('gulp-plumber'),
+
 	config = require('../config');
 
 var isProduction = args.type === 'production' ;
@@ -32,7 +32,7 @@ var lintThresholdHandler = function(numberOfWarnings, numberOfErrors) {
   gutil.log(msg);
 };
 
-gulp.task('scripts-coffee', function(){
+gulp.task('scripts-coffee', false, function(){
 	return gulp.src(config.src.coffee)
 				   .pipe(plumber())
 		   		   .pipe(coffeelint())
@@ -47,9 +47,9 @@ gulp.task('scripts-coffee', function(){
 				   .pipe(gulp.dest(config.base.temp))
 				   .on('error', swallowError);
 });
-	
+
 // Task: Scripts
-gulp.task('scripts-js', function(){
+gulp.task('scripts-js', false,  function(){
 		return gulp.src(config.src.scripts) //, config.src.scripts
 		   		   //.pipe(jshint())
 				   .pipe(concat('app.js'))
@@ -64,9 +64,9 @@ gulp.task('scripts-js', function(){
 		.pipe(plugins.concat('app.js'))*/
 });
 
-gulp.task('scripts', ['scripts-coffee', 'scripts-js'], function(){ // delete temp files
+gulp.task('scripts', 'Do that script thingy', ['scripts-coffee', 'scripts-js'], function(){ // delete temp files
   return gulp.src([
-    		config.base.temp + '/app.js', 
+    		config.base.temp + '/app.js',
     		config.base.temp + '/app-coffee.js'])
     .pipe(concat('app.js'))
     .pipe(gulpif(isProduction, uglify()))
