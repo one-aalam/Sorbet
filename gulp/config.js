@@ -1,6 +1,6 @@
 /**
  * path define src, dest, temp and vendor folders
- * 
+ *
  */
 
 var basePaths = {
@@ -26,7 +26,7 @@ var paths = {
 	styles: {
 		src: basePaths.src + '/css',
 		dest: basePaths.dest + '/css',
-		
+
 		src_sass: basePaths.src + '/sass',
 		src_less: basePaths.src + '/less',
 		src_styl: basePaths.src + '/styl'
@@ -61,7 +61,7 @@ module.exports = {
 		base: basePaths,
 		src: appFiles,
 		paths: paths,
-	    vendor: vendorFiles, 
+	    vendor: vendorFiles,
 		settings:{
 			sprite: spriteConfig,
 			sass:{
