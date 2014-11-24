@@ -110,7 +110,7 @@ var tmpFolder = '.temp';
 			gulp.start('serve');
 		}
 
-	
+
 
 	// Typical process of downloading something
 	gulp.task('download',['flush:temp'], function(){
@@ -144,7 +144,18 @@ var tmpFolder = '.temp';
 			});
 	});
 
-
+/* Hackful way to supress gulp messages */
+/*
+var cl = console.log;
+console.log = function () {
+    var args = Array.prototype.slice.call(arguments);
+    if (args.length) {
+        if (/^\[.*gulp.*\]$/.test(args[0])){
+            return;
+        }
+    }
+    return cl.apply(console, args);
+};*/
 
 	//@TODO
 	// Use gulp-changed, gulp-bower-files/ wiredep
