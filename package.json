@@ -1,7 +1,7 @@
 {
-  "name": "ll",
+  "name": "Lleyr-things",
   "version": "0.0.1",
-  "description": "",
+  "description": "Organised Gulp starter for your next awesome!",
   "main": "index.js",
   "bin": {
     "lleyr": "./bin/lleyr.js"
