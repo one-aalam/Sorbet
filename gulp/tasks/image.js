@@ -4,8 +4,8 @@ var gulp  = require('gulp'),
 	config = require('../config');
 
 	gulp.task('images:min', function() {
-	 	return gulp.src(config.paths.images.src)
-				.pipe(imagemin({optimizationLevel: 5}))
+	 	return gulp.src(config.src.images)
+				.pipe(imagemin({optimizationLevel: 5, progressive: true, interlaced: true}))
 				.pipe(gulp.dest(config.paths.images.dest));
 	});
 

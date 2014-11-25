@@ -16,23 +16,19 @@ var basePaths = {
  */
 var paths = {
     images: {
-        src: basePaths.src + '/images',
-        dest: basePaths.dest + '/images'
+        src: basePaths.src + '/images', dest: basePaths.dest + '/images',
+        src_sprite: basePaths.src + '/images/sprite/*',
+        src_svg: basePaths.src + '/images/svg/*'
     },
     scripts: {
-        src: basePaths.src + '/js',
-        dest: basePaths.dest + '/js'
+		src: basePaths.src + '/js', dest: basePaths.dest + '/js'
     },
     styles: {
-        src: basePaths.src + '/css',
-        dest: basePaths.dest + '/css',
-
+        src: basePaths.src + '/css', dest: basePaths.dest + '/css',
+        // CSS pre-processors
         src_sass: basePaths.src + '/sass',
         src_less: basePaths.src + '/less',
         src_styl: basePaths.src + '/styl'
-    },
-    sprite: {
-        src: basePaths.src + '/images/sprite/*'
     }
 };
 
@@ -42,7 +38,9 @@ var appFiles = {
     styl: [paths.styles.src + '/**/*.styl', paths.styles.src_styl + '/**/*.styl'],
     coffee: [paths.scripts.src + '/**/*.coffee'],
     scripts: [paths.scripts.src + '/**/*.js'],
-    html: [process.cwd() + '/*.html', basePaths.src + '/**/*.html', basePaths.src + '/pages/**/*.html']
+    html: [process.cwd() + '/*.html', basePaths.src + '/**/*.html', basePaths.src + '/pages/**/*.html'],
+    images:[paths.images.src + '/**/*.{jpg,jpeg,png,gif}'],
+    fonts:[vendor + '/**/*.{ttf,woff,eof,svg}', basePaths.src + '/**/*.{ttf,woff,eof,svg}']
 };
 
 var vendorFiles = {
