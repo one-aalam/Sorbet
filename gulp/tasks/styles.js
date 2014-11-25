@@ -15,6 +15,7 @@ var gulp  = require('gulp'),
 	notify = require('gulp-notify'),
 	plumber = require('gulp-plumber'),
 	browserSync = require('browser-sync'),
+	todo = require('gulp-todo'),
 
 	config = require('../config');
 
@@ -67,6 +68,7 @@ var configSASS = {
 						//
 						.pipe(size())
 						//
+						//.pipe(todo())
 						.pipe(gulp.dest(config.paths.styles.dest))
 						// Pick .css only, as map files are also available down the
 						// stream
