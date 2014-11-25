@@ -58,6 +58,9 @@ var spriteConfig = {
 
 // Export
 module.exports = {
+		settings:{
+			showLogs: false
+		},
 		base: basePaths,
 		src: appFiles,
 		paths: paths,

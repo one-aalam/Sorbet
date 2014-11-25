@@ -1,25 +1,14 @@
-// load gulp
-var gulp = require('gulp-help')(require('gulp')),
- // Tasks
-	tasks = require('./gulp'),
-	// Server
-	config = require('./gulp/config'),
-	//
-	path = require('path');
+/**
+ * Gulp's main file
+ *
+ */
+
+	// Require Gulp with help support
+var gulp = require('gulp-help')(require('gulp'))
+	// Load all tasks
+	 ,tasks = require('./gulp');
 
 
-/* Hackful way to supress gulp messages */
-/*
-var cl = console.log;
-console.log = function () {
-    var args = Array.prototype.slice.call(arguments);
-    if (args.length) {
-        if (/^\[.*gulp.*\]$/.test(args[0])){
-            return;
-        }
-    }
-    return cl.apply(console, args);
-};*/
 
 	//@TODO
 	// Use gulp-changed, gulp-bower-files/ wiredep
