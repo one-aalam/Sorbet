@@ -61,14 +61,14 @@ var configSASS = {
 							'android 4',
 							'Firefox >= 4'))
 						// Combine media-queries for production builds
-						.pipe(gulpif(isProduction,combineMQ({log: true})))
+						.pipe(gulpif(isProduction,combineMQ({log: !isProduction ? true : false })))
 						// Minify for production
 						.pipe(gulpif(isProduction,cssmin()))
 						//
 						.pipe(size())
 						//
 						.pipe(gulp.dest(config.paths.styles.dest))
-						// Pick .css only as map files are also available down the
+						// Pick .css only, as map files are also available down the
 						// stream
 						.pipe(filter('**/*.css'))
 						// As stream is supported, auto-update browsers on finding CSS
