@@ -3,12 +3,12 @@
  *
  */
 
-	// Require Gulp with help support
-var gulp = require('gulp-help')(require('gulp'))
-	// Load all tasks
-	 ,tasks = require('./gulp');
+// Require Gulp with help support
+var gulp = require('gulp-help')(require('gulp')),
+    // Load all tasks
+    tasks = require('./gulp');
 
 
 
-	//@TODO
-	// Use gulp-changed, gulp-bower-files/ wiredep
+//@TODO
+// Use gulp-changed, gulp-bower-files/ wiredep

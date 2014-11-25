@@ -65,6 +65,7 @@
     "browser-sync": "^1.7.1",
     "gulp-exit": "0.0.2",
     "gulp-filter": "^1.0.2",
+    "gulp-rsync": "0.0.4",
     "gulp-todo": "^1.2.0"
   }
 }
