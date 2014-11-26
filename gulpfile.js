@@ -11,4 +11,4 @@ var gulp = require('gulp-help')(require('gulp')),
 
 
 //@TODO
-// Use gulp-changed, gulp-bower-files/ wiredep
+// Use gulp-changed, gulp-bower-files/ wiredep, gulp-tap

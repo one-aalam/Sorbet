@@ -63,6 +63,7 @@
   },
   "devDependencies": {
     "browser-sync": "^1.7.1",
+    "gulp-bless": "^3.0.1",
     "gulp-exit": "0.0.2",
     "gulp-filter": "^1.0.2",
     "gulp-flatten": "0.0.4",

@@ -9,6 +9,7 @@ var gulp  = require('gulp'),
 	cssmin = require('gulp-cssmin'),
 	combineMQ = require('gulp-combine-media-queries'),
 	size = require('gulp-size'),
+	bless = require('bless'),
 	autoprefix = require('gulp-autoprefixer'),
 	args = require('yargs').argv,
 	gulpif = require('gulp-if'),
@@ -73,6 +74,8 @@ var configSASS = {
 						// Pick .css only, as map files are also available down the
 						// stream
 						.pipe(filter('**/*.css'))
+						// bless it
+						//.pipe(bless())
 						// As stream is supported, auto-update browsers on finding CSS
 						// based changes without full page reload
 						.pipe(browserSync.reload({stream:true}));
