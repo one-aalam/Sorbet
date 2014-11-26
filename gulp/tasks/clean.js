@@ -7,6 +7,14 @@ var gulp  = require('gulp'),
 		return gulp.src(dir.dest,{read: false})
 		           .pipe(clean());
 	});
+	gulp.task('flush:scripts', function(){
+		return gulp.src(dir.dest + '/js/**/*',{read: false})
+							.pipe(clean());
+	});
+	gulp.task('flush:styles', function(){
+		return gulp.src(dir.dest + '/css/**/*',{read: false})
+							.pipe(clean());
+	});
 	gulp.task('flush:cwd', function(){
 		return gulp.src(process.cwd() + '/**/*',{read: false})
 		           .pipe(clean({force: true}));

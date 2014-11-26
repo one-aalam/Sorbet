@@ -40,7 +40,7 @@ var appFiles = {
     scripts: [paths.scripts.src + '/**/*.js'],
     html: [process.cwd() + '/*.html', basePaths.src + '/**/*.html', basePaths.src + '/pages/**/*.html'],
     images:[paths.images.src + '/**/*.{jpg,jpeg,png,gif}'],
-    fonts:[vendor + '/**/*.{ttf,woff,eof,svg}', basePaths.src + '/**/*.{ttf,woff,eof,svg}']
+    fonts:[basePaths.vendor + '/**/*.{ttf,woff,eof,svg}', basePaths.src + '/**/*.{ttf,woff,eof,svg}']
 };
 
 var vendorFiles = {

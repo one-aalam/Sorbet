@@ -13,6 +13,8 @@ var gulp = require('gulp'),
     gulpif = require('gulp-if'),
     notify = require('gulp-notify'),
     plumber = require('gulp-plumber'),
+    flatten = require('gulp-flatten'),
+    filter = require('gulp-filter'),
 
     config = require('../config');
 
@@ -31,6 +33,16 @@ var lintThresholdHandler = function(numberOfWarnings, numberOfErrors) {
     msg += '. Error count: ' + numberOfErrors + '.';
     gutil.log(msg);
 };
+
+
+gulp.task('scripts-vendor','Include bower packages for builds', function(){ console.log(config.base.vendor);
+  return gulp.src(config.base.vendor + '/**/*')
+             .pipe(flatten())
+             .pipe(filter('**/*.min.js'))
+             .pipe(gulpif(isProduction, concat('vendor.js')))
+             .pipe(gulpif(isProduction, rename({suffix: ".min"})))
+             .pipe(gulpif(isProduction, gulp.dest(config.paths.scripts.dest), gulp.dest(config.paths.scripts.dest + '/vendor')));
+});
 
 gulp.task('scripts-coffee', false, function() {
     return gulp.src(config.src.coffee)
@@ -62,7 +74,7 @@ gulp.task('scripts-js', false, function() {
 		.pipe(plugins.concat('app.js'))*/
 });
 
-gulp.task('scripts', 'Do that script thingy', ['scripts-coffee', 'scripts-js'], function() { // delete temp files
+gulp.task('scripts', 'Do that script thingy', ['flush:scripts','scripts-coffee', 'scripts-js', 'scripts-vendor'], function() { // delete temp files
     return gulp.src([
             config.base.temp + '/app.js',
             config.base.temp + '/app-coffee.js'
@@ -73,7 +85,6 @@ gulp.task('scripts', 'Do that script thingy', ['scripts-coffee', 'scripts-js'], 
         .pipe(gulpif(isProduction, rename({
             suffix: '.min'
         })))
-        .pipe(gulp.dest(config.paths.scripts.dest))
         .pipe(gulp.dest(config.paths.scripts.dest))
         .pipe(notify({
             message: 'Scripts task complete'
