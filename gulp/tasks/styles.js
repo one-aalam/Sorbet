@@ -7,6 +7,8 @@ var gulp  = require('gulp'),
 	styl = require('gulp-stylus'),
 	filter = require('gulp-filter'),
 	cssmin = require('gulp-cssmin'),
+	flatten = require('gulp-flatten'),
+	rename = require('gulp-rename'),
 	combineMQ = require('gulp-combine-media-queries'),
 	size = require('gulp-size'),
 	bless = require('gulp-bless'),
@@ -34,6 +36,15 @@ var configSASS = {
 				trace: false,
 				precision: 2
 };
+
+gulp.task('styles:vendor','Include bower packages for builds(CSS)', function(){
+	return gulp.src(config.base.vendor + '/**/*')
+						.pipe(flatten())
+						.pipe(filter('**/*.min.css'))
+						.pipe(gulpif(isProduction, concat('vendor.css')))
+						.pipe(gulpif(isProduction, rename({suffix: ".min"})))
+						.pipe(gulpif(isProduction, gulp.dest(config.paths.styles.dest), gulp.dest(config.paths.styles.dest + '/vendor')));
+});
 
 
 	gulp.task('styles:sass', function(){
@@ -83,6 +94,6 @@ var configSASS = {
 
 
 
-	gulp.task('styles',['styles:sass'], function(){
+	gulp.task('styles',['flush:styles','styles:sass','styles:vendor'], function(){
 		console.log('Styled...Totally!');
 	});
