@@ -62,6 +62,8 @@ var configSASS = {
 							'ios 6',
 							'android 4',
 							'Firefox >= 4'))
+						// bless the IE's
+						//.pipe(bless())
 						// Combine media-queries for production builds
 						.pipe(gulpif(isProduction,combineMQ({log: !isProduction ? true : false })))
 						// Minify for production
@@ -74,8 +76,6 @@ var configSASS = {
 						// Pick .css only, as map files are also available down the
 						// stream
 						.pipe(filter('**/*.css'))
-						// bless it
-						//.pipe(bless())
 						// As stream is supported, auto-update browsers on finding CSS
 						// based changes without full page reload
 						.pipe(browserSync.reload({stream:true}));
