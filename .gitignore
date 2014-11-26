@@ -17,3 +17,5 @@ bower_components
 client/components
 .sass-cache
 .temp
+archives
+build

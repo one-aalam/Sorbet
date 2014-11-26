@@ -4,8 +4,8 @@ var gulp  = require('gulp'),
 
 	// Task: Clean
 	gulp.task('flush', function(){
-		return gulp.src(dir.dest,{read: false})
-		           .pipe(clean());
+		/*return gulp.src(dir.dest,{read: false})
+		           .pipe(clean());*/
 	});
 	gulp.task('flush:scripts', function(){
 		return gulp.src(dir.dest + '/js/**/*',{read: false})
