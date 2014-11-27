@@ -1,28 +1,27 @@
-Gulpstart
+Sorbet
 =============
 
-Quickly start a project with Gulp.js
+A sweet dessert of great Gulp recipes to give you just right amount of refreshment baked-in for your next front-end masterpice.
 
 ### Features
 
-- JS uglify
+- JS and Coffeescript linting
 - SASS, LESS & Stylus pre-processor
-- JS hint
-- JS minify
-- Image minify
-- CSS, JS injection
-- Clean files
-- Hassle-free 3rd-party lib bower inclusion
+- JS, CSS & image minification
+- Auto CSS, JS injection as you develop
+- Hassle-free 3rd-party library inclusion
+- Template with partials
+- Archiving and remote syncing 
 
 ### @TODO
-- Use different folders for build/dist
+- Pass data in templates
 
 ### Usage
 It's assumed you have `npm` installed and the `gulp-cli`.
 
 1. clone the repo
 
-		git clone https://github.com/one-aalam/lleyr-things.git
+		git clone https://github.com/one-aalam/sorbet.git
 
 2. install dependencies
 
@@ -31,6 +30,11 @@ It's assumed you have `npm` installed and the `gulp-cli`.
 3. start gulp
 
 		gulp
+
+### Available commands
+		
+		gulp develop
+		gulp build
 
 
 
