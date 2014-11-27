@@ -1,7 +1,7 @@
 Sorbet
 =============
 
-A sweet dessert of great Gulp recipes to give you just right amount of refreshment baked-in for your next front-end masterpice.
+A sweet dessert of great Gulp recipes to give you just right amount of refreshment baked-in for your next front-end masterpiece.
 
 ### Features
 
@@ -32,7 +32,7 @@ It's assumed you have `npm` installed and the `gulp-cli`.
 		gulp
 
 ### Available commands
-		
+
 		gulp develop
 		gulp build
 
