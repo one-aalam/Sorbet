@@ -19,3 +19,6 @@ gulp.task('include', function() {
      }))
     .pipe(gulp.dest(dir.dest));
 });
+// TODO: More libs...
+// TODO: https://www.npmjs.org/package/gulp-processhtml/
+// TODO: https://www.npmjs.org/package/gulp-preprocess/
