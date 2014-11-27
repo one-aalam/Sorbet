@@ -1,6 +1,13 @@
 var gulp  = require('gulp'),
 	clean = require('gulp-clean'),
+	del = require('del'),
 	dir = require('../config').base;
+
+	// TODO: Use `del` instead
+
+	gulp.task('clean', function(cb) {
+    del([dir.dest + '/js', dir.dest + '/css', dir.dest + '/images'], cb)
+  });
 
 	// Task: Clean
 	gulp.task('flush', function(){
