@@ -18,7 +18,12 @@ A sweet dessert of great Gulp recipes to give you just right amount of refreshme
 
 ### @TODO
 - Pass data in templates
+- Support for Jade, HAML, Handlebars
+- Cache busting for production builds
+- Command line arguments to change behavior
+- SVG min and embedding support
 - Test integration
+- Better user configuration
 
 ### Usage
 It's assumed you have `npm` installed and the `gulp-cli`.
