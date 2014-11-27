@@ -1,3 +1,6 @@
+
+![](https://raw.githubusercontent.com/one-aalam/repo-images/master/sorbet/artwork.png)
+
 Sorbet
 =============
 
@@ -15,6 +18,7 @@ A sweet dessert of great Gulp recipes to give you just right amount of refreshme
 
 ### @TODO
 - Pass data in templates
+- Test integration
 
 ### Usage
 It's assumed you have `npm` installed and the `gulp-cli`.
