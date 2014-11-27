@@ -10,8 +10,9 @@ Quickly start a project with Gulp.js
 - JS hint
 - JS minify
 - Image minify
-- CSS, JS injection 
+- CSS, JS injection
 - Clean files
+- Hassle-free 3rd-party lib bower inclusion
 
 ### @TODO
 - Use different folders for build/dist
@@ -21,7 +22,7 @@ It's assumed you have `npm` installed and the `gulp-cli`.
 
 1. clone the repo
 
-		git clone https://github.com/one-aalam/gulpstart.git
+		git clone https://github.com/one-aalam/lleyr-things.git
 
 2. install dependencies
 

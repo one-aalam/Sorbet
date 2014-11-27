@@ -16,6 +16,8 @@ var gulp = require('gulp'),
     flatten = require('gulp-flatten'),
     filter = require('gulp-filter'),
 
+    bowerFiles = require('main-bower-files'),
+
     config = require('../config');
 
 var isProduction = args.type === 'production';
@@ -36,11 +38,19 @@ var lintThresholdHandler = function(numberOfWarnings, numberOfErrors) {
 
 
 gulp.task('scripts-vendor','Include bower packages for builds', function(){ console.log(config.base.vendor);
+  // TODO: Use gulp-order, main-bower-files instead for more optimal dependency loading
+        /*
+          var mainFiles = bowerFiles();
+          if(!mainFiles.length){
+            // Skip...
+            return;
+          }*/
   return gulp.src(config.base.vendor + '/**/*')
              .pipe(flatten())
              .pipe(filter('**/*.min.js'))
              .pipe(gulpif(isProduction, concat('vendor.js')))
              .pipe(gulpif(isProduction, rename({suffix: ".min"})))
+             .pipe(gulp.dest(config.base.temp)) // keep a copy at temp too...
              .pipe(gulpif(isProduction, gulp.dest(config.paths.scripts.dest), gulp.dest(config.paths.scripts.dest + '/vendor')));
 });
 
@@ -76,6 +86,8 @@ gulp.task('scripts-js', false, function() {
 
 gulp.task('scripts', 'Do that script thingy', ['flush:scripts','scripts-coffee', 'scripts-js', 'scripts-vendor'], function() { // delete temp files
     return gulp.src([
+
+            // App files
             config.base.temp + '/app.js',
             config.base.temp + '/app-coffee.js'
         ])

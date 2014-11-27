@@ -1,3 +1,5 @@
+var filter = require('gulp-filter');
+
 /**
  * Utility methods for gulp
  *
@@ -15,4 +17,16 @@ exports.supressLogs = function() {
         }
         return cl.apply(console, args);
     };
+}
+
+
+/**
+ * Filter by extension
+ *
+ */
+
+exports.filter = function(ext){
+  return filter(function(file){
+        return file.path.match(new RegExp('.' + ext + '$'));
+  });
 }
