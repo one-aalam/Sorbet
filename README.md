@@ -24,6 +24,7 @@ A sweet dessert of great Gulp recipes to give you just right amount of refreshme
 - SVG min and embedding support
 - Test integration
 - Better user configuration
+- Better gulp presets
 
 ### Usage
 It's assumed you have `npm` installed and the `gulp-cli`.
