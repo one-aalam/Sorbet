@@ -1,6 +1,8 @@
 var gulp  = require('gulp'),
 	clean = require('gulp-clean'),
 	imagemin = require('gulp-imagemin'),
+	sprite = require('css-sprite').stream, 
+	gulpif = require('gulp-if'),
 	config = require('../config');
 
 	gulp.task('images:min', function() {
@@ -13,25 +15,21 @@ var gulp  = require('gulp'),
 		console.log('Optimizing images');
 	});
 
-/*
-	*/
+
 
 /*
 	Sprite Generator
 */
-/*
-gulp.task('sprite', function () {
-	var spriteData = gulp.src(config.paths.sprite.src).pipe(plugins.spritesmith({
-		imgName: config.settings.sprite.imgName,
-		cssName: config.settings.sprite.cssName,
-		imgPath: config.settings.sprite.imgPath,
-		cssOpts: {
-			functions: false
-		},
-		cssVarMap: function (sprite) {
-			sprite.name = 'sprite-' + sprite.name;
-		}
-	}));
-	spriteData.img.pipe(gulp.dest(config.paths.images.dest));
-	spriteData.css.pipe(gulp.dest(config.paths.styles.src));
-});*/
+
+// generate sprite.png and _sprite.scss
+gulp.task('sprites', function () {
+  return gulp.src(config.paths.images.src_sprite)
+    .pipe(sprite({
+      name: 'sprite',
+      style: '_sprite.scss',
+      cssPath: config.paths.images.dest,
+      processor: 'scss'
+    }))
+    .pipe(gulpif('*.png', gulp.dest(config.paths.images.dest), gulp.dest(config.paths.styles.src_sass + '/partials/gen')));
+});
+
