@@ -1,26 +1,14 @@
+var gulp = require('gulp'),
+    bower = require('bower');
 
-	// Task: Bower/wiredep
-/*
-	gulp.task('bower', function() {
-  		
-		gulp.src('client/css/*.css')
-			.pipe(wiredep({
-				directory: 'client/components',
-				ignorePath: 'client/components/'
-			}))
-        	.pipe(gulp.dest('build/css'));
-		
-		gulp.src('client/js/*.js')
-			.pipe(wiredep({
-				directory: 'client/components',
-				ignorePath: 'client/components/'
-			}))
-        	.pipe(gulp.dest('build/js'));
+// Install dependencies defined in bower.json and run
+// a callback after which is not possible through plain
+// `bower install`
 
-    	gulp.src(pathSrc.html)
-			.pipe(wiredep({
-				directory: 'client/components',
-				ignorePath: 'client/'
-			}))
-        	.pipe(gulp.dest('build'));
-	});*/
+
+gulp.task('bower', function(cb){
+  bower.commands.install([], {save: true}, {})
+    .on('end', function(installed){
+      cb(); // notify gulp that this task is finished
+    });
+});
