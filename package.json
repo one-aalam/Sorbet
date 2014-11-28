@@ -1,10 +1,10 @@
 {
-  "name": "Lleyr-things",
+  "name": "Sorbet",
   "version": "0.0.1",
   "description": "Organised Gulp starter for your next awesome!",
   "main": "index.js",
   "bin": {
-    "lleyr": "./bin/lleyr.js"
+    "sorbet": "./bin/sorbet.js"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -63,13 +63,16 @@
   },
   "devDependencies": {
     "browser-sync": "^1.7.1",
+    "css-sprite": "^0.9.0",
     "gulp-bless": "^3.0.1",
+    "gulp-data": "^1.0.2",
     "gulp-exit": "0.0.2",
     "gulp-file-include": "^0.6.0",
     "gulp-filter": "^1.0.2",
     "gulp-flatten": "0.0.4",
     "gulp-inject": "^1.0.2",
     "gulp-rsync": "0.0.4",
+    "gulp-template": "^1.1.1",
     "gulp-todo": "^1.2.0",
     "gulp-w3cjs": "^0.2.1",
     "gulp-zip": "^2.0.2",

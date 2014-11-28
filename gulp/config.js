@@ -73,5 +73,10 @@ module.exports = {
     // deployment configuration
     remote:{
     	hostname:''
+    },
+    data: {
+        title:'',
+        description:'',
+        author: ''
     }
 };
