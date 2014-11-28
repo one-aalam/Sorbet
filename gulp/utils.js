@@ -30,3 +30,8 @@ exports.filter = function(ext){
         return file.path.match(new RegExp('.' + ext + '$'));
   });
 }
+
+exports.error = function(err){
+      gutil.log(err.toString());
+      this.emit('end');
+}

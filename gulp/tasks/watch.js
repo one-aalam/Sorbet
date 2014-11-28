@@ -17,14 +17,19 @@ gulp.task('setWatching', function(){
 });
 
 gulp.task('watch', ['styles', 'scripts', 'images', 'browser-sync'], function(){
-
-	gutil.log(gutil.colors.cyan("Observing for changes..."));
 	notify(notify({ message: 'Start of watch...' }))
 
 	// Watch .html files
-    gulp.watch(config.src.html,['html','bs-reload']).on('change', function(evt) {
+
+  gulp.watch(config.src.html,['html','bs-reload']).on('change', function(evt) {
 		changeEvent(evt);
 	});
+
+	gulp.watch('src/templates/**/*',['include','inject','bs-reload']).on('change', function(evt) {
+		changeEvent(evt);
+	});
+
+
 
 	// Watch .scss files
 	gulp.watch(config.src.sass, ['styles']).on('change', function(evt) {

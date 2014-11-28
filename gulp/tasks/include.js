@@ -3,6 +3,7 @@ var gulp = require('gulp'),
     rename = require('gulp-rename'),
     filter = require('gulp-filter'),
     dir = require('../config').base,
+    utils = require('../utils'),
 
     tplFolder = '/templates',
     tplFiles = '/*.tpl.html',
@@ -17,5 +18,12 @@ gulp.task('include', function() {
     .pipe(rename({
       extname: ".html"
      }))
-    .pipe(gulp.dest(dir.dest));
+    .pipe(gulp.dest(dir.dest))
+    .on('error',utils.error);
 });
+
+
+// TODO: More libs...
+// TODO: https://www.npmjs.org/package/gulp-processhtml/
+// TODO: https://www.npmjs.org/package/gulp-preprocess/
+// https://www.npmjs.org/package/gulp-include
