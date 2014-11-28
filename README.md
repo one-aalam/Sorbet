@@ -6,6 +6,8 @@ Sorbet
 
 A sweet dessert of great Gulp recipes to give you just right amount of refreshment baked-in for your next front-end masterpiece.
 
+> This project is still a [work-in-progress](https://github.com/one-aalam/Sorbet/issues/1)
+
 ### Features
 
 - JS and Coffeescript linting
@@ -14,17 +16,8 @@ A sweet dessert of great Gulp recipes to give you just right amount of refreshme
 - Auto CSS, JS injection as you develop
 - Hassle-free 3rd-party library inclusion
 - Template with partials
-- Archiving and remote syncing 
+- Archiving and remote syncing
 
-### @TODO
-- Pass data in templates
-- Support for Jade, HAML, Handlebars
-- Cache busting for production builds
-- Command line arguments to change behavior
-- SVG min and embedding support
-- Test integration
-- Better user configuration
-- Better gulp presets
 
 ### Usage
 It's assumed you have `npm` installed and the `gulp-cli`.
