@@ -77,5 +77,15 @@
     "gulp-w3cjs": "^0.2.1",
     "gulp-zip": "^2.0.2",
     "main-bower-files": "^2.4.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/one-aalam/Sorbet.git"
+  },
+  "author": "Aftab Alam <aftabbuddy@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/one-aalam/Sorbet/issues"
+  },
+  "homepage": "https://github.com/one-aalam/Sorbet"
 }
